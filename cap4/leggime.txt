@@ -1,0 +1,43 @@
+Questo captitolo tratta di 'SERVICES':
+
+A)un bundle pubblica  un service come una data interfaccia assegnado un rank.
+
+B)un altro o piu bundles SUBSCRIBER registrano tale service chiedendo al framework un servizio che espone tale interfaccia.
+
+
+I bundles sono :
+
+1) cap4 [SUBSCRIBER] che contiene  diversi activators:
+
+a)Activator_broken_lookup_field: anche stoppando PUBLISHER, il SUBSCRIBER continua ad usare il service perche 
+e' salvato come instance variable nell'activator stesso.In breve, SUBSCRIBER e' insensibile alla stato del servizio 
+usato [stop in questo caso]
+
+b)Activator_broken_lookup_single:qui il SUBSCRIBER e' sensibile allo status [stop] del PUBLISHER, ma non al restart, update,etc.
+Se si stoppa PUBLISHER,SUBSCRIBER se ne accorge [Logservice is gone], se lo si riattiva pero' non se ne accorge.
+
+c)Activator_broken_race_condition:  SUBSCRIBER e' sensibile allo status stop e restart del PUBLISHER, ma e' potenzialmente
+esposto al rischio di fallire se lo stop avviene tra m_context.getServiceReference() e m_context.getService()
+
+d)Activator_correct: SUBSCRIBER e'sempre sensibile allo status stop e restart del PUBLISHER.
+No race condition caso d, ma esposto al rischio di NON usare il service nel caso in cui,tra 
+m_context.getServiceReference() e m_context.getService()  il service viene updatato e  m_context.getService()
+ritorna null.
+
+e)Activator_correct_listener: come Activator_correct ma senza alcun rischio di usare versione NON FRESCA del service.
+Uso di BundleContext.addServiceListener().
+
+f)Activator_correct_ServiceTracker: come Activator_correct_listener ma senza il peso di codificare il listener.
+Richiede il package  org.osgi.util.tracker contenuto nel bundle org.eclipse.osgi
+
+
+
+
+
+Per eseguire i vari esempi, cambia il Bundle-Activator: in MANIFEST.MF.
+
+
+
+2)cap4_logservice [PUBLISHER] pubblica il servizio che implementa org.osgi.service.log.LogService [compendium OSGi services]
+
+ 

@@ -1,0 +1,14 @@
+	BundleEvent(type=2,bundle=org.foo.shell [3],source=org.foo.shell [3])
+	BundleEvent(type=32,bundle=org.foo.shell.tty [4],source=org.foo.shell.tty [4])
+	BundleEvent(type=2,bundle=org.foo.shell.tty [4],source=org.foo.shell.tty [4])
+	BundleEvent(type=2,bundle=osgi.cmpn [5],source=osgi.cmpn [5])
+	BundleEvent(type=2,bundle=org.osgi.service.obr [6],source=org.osgi.service.obr [6])
+
+
+
+ss
+ss
+ss
+	BundleEvent(type=4,bundle=org.apache.felix.framework [0],source=org.apache.felix.framework [0])
+	BundleEvent(type=4,bundle=org.osgi.service.obr [6],source=org.osgi.service.obr [6])
+	BundleEvent(type=4,bundle=osgi.cmpn [5],source=osgi.cmpn [5])

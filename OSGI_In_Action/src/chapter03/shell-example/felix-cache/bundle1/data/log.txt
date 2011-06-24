@@ -1,0 +1,17 @@
+	BundleEvent(type=2,bundle=org.foo.shell [1],source=org.foo.shell [1])
+history
+install file:\cC:\miei\Workspaces\OSGI_in_Action\OSGI_In_Action\src\chapter03\shell-example\bundles\
+history
+	BundleEvent(type=1,bundle=org.foo.paint [3],source=org.foo.paint [3])
+install file:\C:\miei\Workspaces\OSGI_in_Action\OSGI_In_Action\src\chapter03\paint-example\bundles\paint-3.0.jar
+history
+bundles
+history
+bundles
+[A[Ahistory
+
+
+
+
+history
+	BundleEvent(type=4,bundle=org.apache.felix.framework [0],source=org.apache.felix.framework [0])
